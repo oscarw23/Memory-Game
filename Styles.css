@@ -1,0 +1,72 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgba(142, 15, 15, 1.952);
+}
+
+.Start{
+        border: 2px solid white;
+        background-color: transparent;
+        color: #eee;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        font-family: 'DynaPuff', cursive;
+        font-size: 1.5rem;
+        transition: 0.3s all;
+        margin-left: 50%;
+        
+      }
+
+
+.Start:hover {
+    background: white;
+    color: black;
+}
+
+
+body{
+    height: 100vh;  
+    background-color: rgba(142, 15, 15, 0.882);
+    display: flex;
+}
+.memory-game{
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+.memory-cards{
+    width: calc(25% - 10px);
+    height: calc(33.33% - 10px);
+    border: 2px solid rgba(142, 15, 15, 0.652);;
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.memory-cards :active{
+    transform: scale(1.1);
+    transition: transform .2s;
+}
+.memory-cards.flip{
+    transform: rotateY(180deg);
+}
+
+.FrontFace,
+.BackFace{
+    width: 100%;
+    height: 100%;
+    padding: 20%;
+    position: absolute;
+    border-radius: 20px;
+    background-color: rgba(142, 15, 15, 0.841);
+    backface-visibility: hidden;
+}
+.FrontFace{
+    transform: rotateY(180deg);
+}
